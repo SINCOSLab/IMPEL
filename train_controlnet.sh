@@ -1,0 +1,21 @@
+CUDA_VISIBLE_DEVICES=0 accelerate launch train_controlnet.py \
+  --pretrained_model_name_or_path="/path_stable-diffusion-3-medium-diffusers"  \
+  --train_data_dir="/controlnet_data" \
+  --lora_model_path="/lora_weight_path" \
+  --rgb_column="conditioning_rgb" \
+  --range_column="range_image_file_name" \
+  --cache_dir="/cache" \
+  --caption_column="text" \
+  --mixed_precision="fp16" \
+  --output_dir="/output_path" \
+  --validation_prompt="A range image" \
+  --train_batch_size=4 \
+  --report_to="wandb" \
+  --gradient_accumulation_steps=1 \
+  --learning_rate=3e-4 \
+  --lr_scheduler='constant' \
+  --max_train_steps=20000 \
+  --validation_image="/controlnet_data/depth_canny/001000.png" \
+  --validation_steps=2000 \
+  --checkpointing_steps=2000 \
+  --enable_edge_loss
