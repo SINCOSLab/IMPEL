@@ -106,3 +106,7 @@ The argument name `--rgb_column=conditioning_rgb` is retained for compatibility 
 ```bash
 sh train_controlnet.sh
 ```
+
+## Acknowledgements
+
+We gratefully acknowledge [LiDARGen](https://github.com/vzyrianov/lidargen), [LiDM](https://github.com/hancyran/LiDAR-Diffusion), and [RangeNet++](https://github.com/PRBonn/lidar-bonnetal) for their valuable support of this work.
